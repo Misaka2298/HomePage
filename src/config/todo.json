@@ -1,19 +1,19 @@
 {
   "todoList": [
     {
-      "text": "学会Java",
+      "text": "NOIP 一等奖",
       "checked": false
     },
     {
-      "text": "学会粤语",
+      "text": "在艺术节表演",
       "checked": false
     },
     {
-      "text": "学会英语",
+      "text": "学会Python",
       "checked": false
     },
     {
-      "text": "重构个人主页",
+      "text": "搭个个人主页",
       "checked": true
     }
   ]

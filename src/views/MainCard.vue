@@ -112,10 +112,10 @@
 
       <div class="rightBox">
         <div class="card">
-          <p>你好鸭，很高兴认识你👋</p>
+          <p>哈喽，很高兴认识你👋</p>
           <p>
             我叫
-            <b>{{ config.name }}</b>
+            <b>{{ config.name }}(Misaka2298)</b>
             （ {{ config.age }}年的 <b class="zodiac">{{ config.zodiac }}</b> ）
           </p>
           <p>
@@ -162,8 +162,8 @@
 
     <div class="footer">
       <p>
-        ©2025 Quenan |
-        <a href="https://github.com/QNquenan/Simple-Homepage">仓库</a>
+        Copyright© 2025 - 现在 Misaka2298, All Rights Reserved. |
+        <a href="https://github.com/Misaka2298/HomePage">GitHub 仓库</a>
       </p>
     </div>
   </div>
