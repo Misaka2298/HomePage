@@ -35,3 +35,41 @@
   /* 加载动画背景颜色 */
   --loading-background: #2b2b2b;
 }
+
+/* 全屏图片背景 + 毛玻璃覆盖层 */
+.app-bg {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  z-index: -999; /* 放在最底层 */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.app-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* 半透明暗色遮罩，提升内容可读性 */
+  background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15));
+}
+
+/* 毛玻璃层：使用 backdrop-filter（现代浏览器支持）并在不支持时退回到半透明背景 */
+.app-frost {
+  position: fixed;
+  inset: 0;
+  z-index: -998;
+  pointer-events: none; /* 不影响页面交互 */
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+}
+
+/* 降级：如果 backdrop-filter 不可用，则使用半透明白色遮罩 + filter 模糊背景图 */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .app-frost {
+    background: rgba(255,255,255,0.12);
+  }
+  .app-bg {
+    filter: blur(4px) brightness(0.95);
+  }
+}
